@@ -17,8 +17,12 @@ public class ConditionalExercises {
      * @return "positive" or "not positive"
      */
     public String checkPositive(int number) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (number > 0) {
+           return "positive";
+        }
+        else{
+            return "not positive";
+        }
     }
 
     /**
