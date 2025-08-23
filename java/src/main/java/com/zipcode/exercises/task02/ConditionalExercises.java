@@ -32,8 +32,12 @@ public class ConditionalExercises {
      * @return "even" or "odd"
      */
     public String checkEvenOdd(int number) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if(number % 2 == 0){
+            return "even";
+        }
+        else{
+            return "odd";
+        }
     }
 
     /**
