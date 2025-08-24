@@ -1,5 +1,7 @@
 package com.zipcode.exercises.task02;
 
+import javax.swing.*;
+
 /**
  * Task 2: Conditional Statements
  * 
@@ -74,7 +76,8 @@ public class ConditionalExercises {
             else if (number == 0){
                 return "zero";
             }
-            else return "small positive";
+            else
+                return "small positive";
         }
         else
             return "large positive";
@@ -89,7 +92,33 @@ public class ConditionalExercises {
      */
     public String getDayName(int dayNumber) {
         // TODO: Implement this method using traditional switch statement
-        throw new UnsupportedOperationException("Method not implemented yet");
+        String dayName = "";
+        switch (dayNumber) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day";
+        }
+        return dayName;
     }
 
     /**
@@ -100,8 +129,49 @@ public class ConditionalExercises {
      * @return number of days in the month, or -1 for invalid month
      */
     public int getDaysInMonth(int month) {
-        // TODO: Implement this method using switch expression
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using switch expression
+        int daysInMonth = 0;
+        switch (month) {
+            case 1:
+                daysInMonth = 31;
+                break;
+            case 2:
+                daysInMonth = 28;
+                break;
+            case 3:
+                daysInMonth = 31;
+                break;
+            case 4:
+                daysInMonth = 30;
+                break;
+            case 5:
+                daysInMonth = 31;
+                break;
+            case 6:
+                daysInMonth = 30;
+                break;
+            case 7:
+                daysInMonth = 31;
+                break;
+            case 8:
+                daysInMonth = 31;
+                break;
+            case 9:
+                daysInMonth = 30;
+                break;
+            case 10:
+                daysInMonth = 31;
+                break;
+            case 11:
+                daysInMonth = 30;
+                break;
+            case 12:
+                daysInMonth = 31;
+                break;
+            default:
+                daysInMonth = -1;
+        }
+        return daysInMonth;
     }
 
     /**
@@ -111,35 +181,39 @@ public class ConditionalExercises {
      * @return absolute value of the number
      */
     public int getAbsoluteValue(int number) {
-        // TODO: Implement this method using ternary operator
+        // Implemented this method using ternary operator
         // return (condition) ? value_if_true : value_if_false;
-        throw new UnsupportedOperationException("Method not implemented yet");
+        return (number < 0) ? -number : number;
     }
 
     /**
      * Complex conditional logic
      * Determine if a person can vote based on age and citizenship
      * Must be 18 or older AND be a citizen
-     * @param age the person's age
+     *
+     * @param age       the person's age
      * @param isCitizen whether the person is a citizen
      * @return true if can vote, false otherwise
      */
     public boolean canVote(int age, boolean isCitizen) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        return isCitizen && (age >= 18);
     }
 
     /**
      * String comparison with conditionals
      * Return "Hello, [name]!" if name is not null and not empty,
      * otherwise return "Hello, Guest!"
+     *
      * @param name the name to greet
      * @return greeting message
      */
     public String getGreeting(String name) {
-        // TODO: Implement this method
         // Be careful with null checks and empty string checks
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if ((name == null) || (name.isEmpty())) {
+            return "Hello, " + "Guest!";
+        } else {
+            return "Hello, " + name + "!";
+        }
     }
 
     /**
@@ -152,8 +226,7 @@ public class ConditionalExercises {
      * @return true if valid triangle, false otherwise
      */
     public boolean isValidTriangle(double a, double b, double c) {
-        // TODO: Implement this method
         // Check: a + b > c AND a + c > b AND b + c > a
-        throw new UnsupportedOperationException("Method not implemented yet");
+        return ((a + b > c) && ( a + c > b) && (b + c > a));
     }
 }
