@@ -67,8 +67,17 @@ public class ConditionalExercises {
      * @return category as String
      */
     public String categorizeNumber(int number) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if(number <= 100){
+            if (number < 0) {
+                return "negative";
+            }
+            else if (number == 0){
+                return "zero";
+            }
+            else return "small positive";
+        }
+        else
+            return "large positive";
     }
 
     /**
