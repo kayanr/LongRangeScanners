@@ -25,8 +25,11 @@ public class LoopExercises {
      * @return The sum of numbers from 1 to n
      */
     public int calculateSum(int n) {
-        // TODO: Implement this method using a for loop
-        throw new UnsupportedOperationException("Method not implemented yet");
+        int sum = 0;
+        for(int i = 1; i <= n; i++){
+            sum += i;
+        }
+        return sum;
     }
 
     /**
@@ -37,8 +40,12 @@ public class LoopExercises {
      * @return The number of divisions performed
      */
     public int countDivisions(int n) {
-        // TODO: Implement this method using a while loop
-        throw new UnsupportedOperationException("Method not implemented yet");
+        int count = 0;
+        while(n > 1){
+            n = n / 2;
+            count++;
+        }
+        return count;
     }
 
     /**
