@@ -113,14 +113,21 @@ public class LoopExercises {
      * Loop with break statement
      * Find the first number in the array that is divisible by divisor
      * Return -1 if no such number is found
-     * 
+     *
      * @param numbers Array of integers to search
      * @param divisor The divisor to check against
      * @return The first number divisible by divisor, or -1 if none found
      */
     public int findFirstDivisible(int[] numbers, int divisor) {
-        // TODO: Implement this method using a loop with break
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using a loop with break
+        int firstDivisibleNum = -1;
+        for (int number : numbers) {
+            if (number % divisor == 0) {
+                firstDivisibleNum = number;
+                break;
+            }
+        }
+        return firstDivisibleNum;
     }
 
     /**
