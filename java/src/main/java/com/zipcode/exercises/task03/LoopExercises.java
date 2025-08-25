@@ -58,8 +58,11 @@ public class LoopExercises {
      * @return A string with the character repeated
      */
     public String repeatCharacter(char character, int targetLength) {
-        // TODO: Implement this method using a do-while loop
-        throw new UnsupportedOperationException("Method not implemented yet");
+        String repeatCharacterStr = "";
+        do {
+            repeatCharacterStr = repeatCharacterStr + character;
+        } while (repeatCharacterStr.length() < targetLength);
+        return repeatCharacterStr;
     }
 
     /**
@@ -71,21 +74,39 @@ public class LoopExercises {
      * @return The maximum value in the array
      */
     public int findMaximum(int[] numbers) {
-        // TODO: Implement this method using enhanced for loop
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (numbers.length == 0) {
+            return Integer.MIN_VALUE;
+        }
+        int max = numbers[0];
+        for(int number : numbers) {
+            if(number > max)
+                {max = number;
+                }
+        }
+        return max;
     }
 
     /**
      * Nested loops
      * Create a multiplication table as a 2D array
      * table[i][j] should contain (i+1) * (j+1)
-     * 
+     *
      * @param size The size of the square table
      * @return A 2D array representing the multiplication table
      */
     public int[][] createMultiplicationTable(int size) {
-        // TODO: Implement this method using nested for loops
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using nested for loops
+        if (size <= 0) {
+            return new int[0][0];
+        }
+        int[][] multiplicationTable = new int[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                multiplicationTable[i][j] = (i + 1) * (j + 1);
+            }
+        }
+        return multiplicationTable;
     }
 
     /**
