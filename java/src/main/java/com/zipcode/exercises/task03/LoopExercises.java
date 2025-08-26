@@ -1,5 +1,6 @@
 package com.zipcode.exercises.task03;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -139,8 +140,16 @@ public class LoopExercises {
      * @return Count of even numbers
      */
     public int countEvenNumbers(int[] numbers) {
-        // TODO: Implement this method using a loop with continue
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using a loop with continue
+
+        int count = 0;
+        for (int number : numbers) {
+            if (number % 2 != 0) {
+                continue;
+            }
+            count++;
+        }
+        return count;
     }
 
     /**
@@ -153,7 +162,26 @@ public class LoopExercises {
      */
     public List<Integer> generateFibonacci(int n) {
         // TODO: Implement this method using loops
-        throw new UnsupportedOperationException("Method not implemented yet");
+        List<Integer> fibonacciList = new ArrayList<>();
+
+        if(n <= 0){
+           return fibonacciList;
+        }
+
+        fibonacciList.add(0);
+
+        if(n == 1){
+            return fibonacciList;
+        }
+
+        fibonacciList.add(1);
+
+        for (int i = 2; i < n; i++) {
+            int nextValue = fibonacciList.get(i - 1) + fibonacciList.get(i - 2);
+            fibonacciList.add(nextValue);
+        }
+
+        return fibonacciList;
     }
 
     /**
