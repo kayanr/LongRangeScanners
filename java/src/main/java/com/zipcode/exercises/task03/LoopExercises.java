@@ -2,6 +2,7 @@ package com.zipcode.exercises.task03;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Task 3: Loops
@@ -161,7 +162,7 @@ public class LoopExercises {
      * @return List containing the Fibonacci sequence
      */
     public List<Integer> generateFibonacci(int n) {
-        // TODO: Implement this method using loops
+        // Implemented this method using loops
         List<Integer> fibonacciList = new ArrayList<>();
 
         if(n <= 0){
@@ -193,8 +194,15 @@ public class LoopExercises {
      * @return Number of vowels found
      */
     public int countVowels(String text) {
-        // TODO: Implement this method using a loop
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using a loop
+        int count = 0;
+        text = text.toLowerCase();
+
+        for (char letter : text.toCharArray()) {
+            if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
+                count++;
+        }
+        return count;
     }
 
     /**
@@ -206,9 +214,21 @@ public class LoopExercises {
      * @return true if the number is prime, false otherwise
      */
     public boolean isPrime(int number) {
-        // TODO: Implement this method using loops
+        //Implemented this method using loops
         // Hint: Check divisibility from 2 to sqrt(number)
-        throw new UnsupportedOperationException("Method not implemented yet");
+
+        if(number <= 1) {
+            return false;
+        }
+
+        int sqrtNum = (int) Math.sqrt(number);
+
+        for (int i = 2; i <= sqrtNum; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
