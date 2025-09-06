@@ -255,11 +255,9 @@ public class LoopExercises {
         for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= i; j++) {
                 trianglePattern = trianglePattern + "*";
-                System.out.println(trianglePattern);
             }
 
             trianglePattern = trianglePattern + "\n";
-
         }
         return trianglePattern;
     }
@@ -273,6 +271,11 @@ public class LoopExercises {
     public void reverseArray(int[] array) {
         // TODO: Implement this method using loops
         // Hint: Swap elements from both ends moving inward
-        throw new UnsupportedOperationException("Method not implemented yet");
+
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
     }
 }
