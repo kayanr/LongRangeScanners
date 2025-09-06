@@ -1,20 +1,21 @@
 package com.zipcode.exercises.task03;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 /**
  * Task 3: Loops
- * 
+ * <p>
  * Complete the methods below by implementing the required functionality.
  * Each method has specific requirements detailed in the JavaDoc comments.
- * 
+ * <p>
  * Java supports several types of loops:
  * - for loops (traditional and enhanced/for-each)
  * - while loops
  * - do-while loops
- * 
+ * <p>
  * Run tests with: mvn test -Dtest.pattern=task03
  */
 public class LoopExercises {
@@ -22,13 +23,13 @@ public class LoopExercises {
     /**
      * Basic for loop
      * Calculate the sum of numbers from 1 to n (inclusive)
-     * 
+     *
      * @param n The upper limit (inclusive)
      * @return The sum of numbers from 1 to n
      */
     public int calculateSum(int n) {
         int sum = 0;
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             sum += i;
         }
         return sum;
@@ -37,13 +38,13 @@ public class LoopExercises {
     /**
      * While loop
      * Count how many times you can divide n by 2 until it becomes 1 or less
-     * 
+     *
      * @param n The number to divide
      * @return The number of divisions performed
      */
     public int countDivisions(int n) {
         int count = 0;
-        while(n > 1){
+        while (n > 1) {
             n = n / 2;
             count++;
         }
@@ -54,8 +55,8 @@ public class LoopExercises {
      * Do-while loop
      * Generate a string that repeats a character until the string length reaches targetLength
      * Always add the character at least once
-     * 
-     * @param character The character to repeat
+     *
+     * @param character    The character to repeat
      * @param targetLength The desired string length
      * @return A string with the character repeated
      */
@@ -71,7 +72,7 @@ public class LoopExercises {
      * Enhanced for loop (for-each)
      * Find the maximum value in an array
      * Return Integer.MIN_VALUE if array is empty
-     * 
+     *
      * @param numbers Array of integers
      * @return The maximum value in the array
      */
@@ -80,10 +81,10 @@ public class LoopExercises {
             return Integer.MIN_VALUE;
         }
         int max = numbers[0];
-        for(int number : numbers) {
-            if(number > max)
-                {max = number;
-                }
+        for (int number : numbers) {
+            if (number > max) {
+                max = number;
+            }
         }
         return max;
     }
@@ -136,7 +137,7 @@ public class LoopExercises {
      * Loop with continue statement
      * Count how many even numbers are in the array
      * Skip odd numbers using continue
-     * 
+     *
      * @param numbers Array of integers
      * @return Count of even numbers
      */
@@ -157,7 +158,7 @@ public class LoopExercises {
      * Complex loop logic
      * Generate the Fibonacci sequence up to n terms
      * Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, ...
-     * 
+     *
      * @param n Number of terms to generate
      * @return List containing the Fibonacci sequence
      */
@@ -165,13 +166,13 @@ public class LoopExercises {
         // Implemented this method using loops
         List<Integer> fibonacciList = new ArrayList<>();
 
-        if(n <= 0){
-           return fibonacciList;
+        if (n <= 0) {
+            return fibonacciList;
         }
 
         fibonacciList.add(0);
 
-        if(n == 1){
+        if (n == 1) {
             return fibonacciList;
         }
 
@@ -189,7 +190,7 @@ public class LoopExercises {
      * String processing with loops
      * Count the number of vowels in a string (case-insensitive)
      * Vowels: a, e, i, o, u
-     * 
+     *
      * @param text The string to analyze
      * @return Number of vowels found
      */
@@ -199,7 +200,7 @@ public class LoopExercises {
         text = text.toLowerCase();
 
         for (char letter : text.toCharArray()) {
-            if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
+            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
                 count++;
         }
         return count;
@@ -209,7 +210,7 @@ public class LoopExercises {
      * Advanced loop pattern
      * Check if a number is prime using trial division
      * A prime number is only divisible by 1 and itself
-     * 
+     *
      * @param number The number to check
      * @return true if the number is prime, false otherwise
      */
@@ -217,7 +218,7 @@ public class LoopExercises {
         //Implemented this method using loops
         // Hint: Check divisibility from 2 to sqrt(number)
 
-        if(number <= 1) {
+        if (number <= 1) {
             return false;
         }
 
@@ -239,19 +240,34 @@ public class LoopExercises {
      * **
      * ***
      * ****
-     * 
+     *
      * @param height The height of the triangle
      * @return A string representing the triangle pattern
      */
     public String generateTrianglePattern(int height) {
-        // TODO: Implement this method using nested loops
-        throw new UnsupportedOperationException("Method not implemented yet");
+        // Implemented this method using nested loops
+        String trianglePattern = "";
+
+        if (height <= 0) {
+            return "";
+        }
+
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= i; j++) {
+                trianglePattern = trianglePattern + "*";
+                System.out.println(trianglePattern);
+            }
+
+            trianglePattern = trianglePattern + "\n";
+
+        }
+        return trianglePattern;
     }
 
     /**
      * Array manipulation with loops
      * Reverse an array in place (modify the original array)
-     * 
+     *
      * @param array The array to reverse
      */
     public void reverseArray(int[] array) {
