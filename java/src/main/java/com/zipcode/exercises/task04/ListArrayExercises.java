@@ -23,8 +23,16 @@ public class ListArrayExercises {
      * @return Array containing integers from 1 to n
      */
     public int[] createNumberArray(int n) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if(n <= 0){
+            return new int[0];
+        }
+
+        int[] numArr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            numArr[i] = i + 1;
+        }
+        return numArr;
     }
 
     /**
@@ -34,8 +42,9 @@ public class ListArrayExercises {
      * @param array The array to modify
      */
     public void doubleArrayElements(int[] array) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        for (int i = 0; i < array.length; i++) {
+            array[i] *= 2;
+        }
     }
 
     /**
@@ -48,8 +57,16 @@ public class ListArrayExercises {
      * @return Index of target or -1 if not found
      */
     public int findElement(int[] array, int target) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (array == null) {
+            return -1;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -61,20 +78,43 @@ public class ListArrayExercises {
      * @return Average value as double
      */
     public double calculateAverage(int[] array) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if(array == null || array.length == 0){
+            return 0.0;
+        }
+        int sum = 0;
+
+        for (int num : array) {
+             sum += num;
+        }
+
+        return (double) sum / array.length;
     }
 
     /**
      * Array filtering
      * Return a new array containing only the even numbers from the input array
-     * 
+     *
      * @param array Input array
      * @return New array with only even numbers
      */
     public int[] filterEvenNumbers(int[] array) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (array == null || array.length == 0) {
+            return new int[0];
+        }
+        int count = 0;
+        for (int num : array) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
+        int[] filteredArray = new int[count];
+        int j = 0;
+        for (int num : array) {
+            if (num % 2 == 0) {
+                filteredArray[j++] = num;
+            }
+        }
+        return filteredArray;
     }
 
     /**
