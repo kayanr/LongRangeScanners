@@ -158,8 +158,21 @@ public class ListArrayExercises {
      * @param list The list to sort
      */
     public void sortList(List<Integer> list) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (list == null || list.size() < 2) {
+            return;
+        }
+
+        int listSize = list.size();
+        for (int i = 0; i < listSize - 1; i++) {
+            for (int j = 0; j < listSize - 1 - i; j++) {
+                if (list.get(j) > list.get(j + 1)) {
+                    int temp = list.get(j);
+                    list.set(j, list.get(j + 1));
+                    list.set(j + 1, temp);
+                }
+            }
+        }
+
     }
 
     /**
