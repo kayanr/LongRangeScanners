@@ -1,5 +1,6 @@
 package com.zipcode.exercises.task04;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -125,8 +126,12 @@ public class ListArrayExercises {
      * @return ArrayList containing numbers 1 to n
      */
     public List<Integer> createNumberList(int n) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        List<Integer> numlist = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            numlist.add(i);
+        }
+        return numlist;
     }
 
     /**
@@ -137,8 +142,13 @@ public class ListArrayExercises {
      * @param value The value to remove
      */
     public void removeValue(List<Integer> list, int value) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == value) {
+                list.remove(i);
+                //So that the next element is not skipped, adjust the index by decrementing i
+                i--;
+            }
+        }
     }
 
     /**
