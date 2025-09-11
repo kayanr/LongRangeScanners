@@ -185,7 +185,28 @@ public class ListArrayExercises {
      */
     public List<Integer> mergeSortedLists(List<Integer> list1, List<Integer> list2) {
         // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+
+        int value1 = list1.size(),  value2 = list2.size();
+        List<Integer> mergedSortedList = new ArrayList<>(value1 + value2);
+
+        int i = 0, j = 0;
+        while (i < value1 && j < value2) {
+            if (list1.get(i) <= list2.get(j)) {
+                mergedSortedList.add(list1.get(i++));
+            } else {
+                mergedSortedList.add(list2.get(j++));
+            }
+        }
+        while(i < value1) {
+        mergedSortedList.add(list1.get(i++));
+        }
+
+        while(j < value2) {
+            mergedSortedList.add(list2.get(j++));
+        }
+
+
+        return mergedSortedList;
     }
 
     /**
