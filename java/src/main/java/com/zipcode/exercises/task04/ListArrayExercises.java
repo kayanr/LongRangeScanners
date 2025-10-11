@@ -184,8 +184,6 @@ public class ListArrayExercises {
      * @return New merged and sorted list
      */
     public List<Integer> mergeSortedLists(List<Integer> list1, List<Integer> list2) {
-        // TODO: Implement this method
-
         int value1 = list1.size(),  value2 = list2.size();
         List<Integer> mergedSortedList = new ArrayList<>(value1 + value2);
 
@@ -218,8 +216,26 @@ public class ListArrayExercises {
      * @param k Number of positions to rotate right
      */
     public void rotateArray(int[] array, int k) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        int n = array.length;
+        if (n == 0) {
+            return;
+        }
+        //Makes sure k is not bigger than the array size
+        k = k % n;
+
+        int[] temp = new int[n];
+
+        for(int i = 0; i < n; i++){
+            //Move each element to its new spot after rotating, wrapping
+            //around the end
+            temp[(i + k) % n] = array[i];
+        }
+
+        //Copy element back into the original array
+        for(int i = 0; i < n; i++){
+            array[i] = temp[i];
+        }
+
     }
 
     /**
@@ -230,8 +246,15 @@ public class ListArrayExercises {
      * @return Maximum sum of contiguous subarray
      */
     public int maxSubarraySum(int[] array) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        int maxSum = array[0];
+        int currentSum = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            currentSum = Math.max(array[i], currentSum + array[i]);
+
+            maxSum = Math.max(maxSum, currentSum);
+        }
+        return maxSum;
     }
 
     /**
@@ -243,8 +266,20 @@ public class ListArrayExercises {
      * @return true if arrays are equal, false otherwise
      */
     public boolean arraysEqual(int[] array1, int[] array2) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if (array1 == null || array2 == null) {
+            return array1 == array2;
+        }
+
+        if (array1.length != array2.length) {
+            return false;
+        }
+
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] != array2[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -257,8 +292,14 @@ public class ListArrayExercises {
      * @return 2D array filled with the specified value
      */
     public int[][] createMatrix(int rows, int cols, int value) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+       int[][] matrixArray = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrixArray[i][j] = value;
+            }
+        }
+
+        return matrixArray;
     }
 
     /**
@@ -269,8 +310,18 @@ public class ListArrayExercises {
      * @return Sum of all elements
      */
     public int matrixSum(int[][] matrix) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+        int sum = 0;
+
+        if(matrix == null || matrix.length == 0){
+            return 0;
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+            }
+        }
+        return sum;
     }
 
     /**
@@ -282,8 +333,25 @@ public class ListArrayExercises {
      * @return Second largest element
      */
     public int findSecondLargest(int[] array) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+      if(array == null || array.length < 2){
+          return Integer.MIN_VALUE;
+      }
+
+      int largestNum = Integer.MAX_VALUE;
+      int secondLargestNum = Integer.MIN_VALUE;
+
+
+      for (int num : array) {
+          if (num  > largestNum) {
+              secondLargestNum = largestNum;
+              largestNum = num;
+          }else if (num < largestNum && num > secondLargestNum ) {
+              secondLargestNum = num;
+          }
+      }
+
+
+      return secondLargestNum;
     }
 
     /**
@@ -296,7 +364,15 @@ public class ListArrayExercises {
      * @return List of common elements (no duplicates)
      */
     public List<Integer> findIntersection(List<Integer> list1, List<Integer> list2) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Method not implemented yet");
+       List<Integer> intersectionList = new ArrayList<>();
+
+       for(int i = 0; i < list1.size(); i++){
+           int num1 = list1.get(i);
+
+           if(list2.contains(num1) && !intersectionList.contains(num1)){
+               intersectionList.add(num1);
+           }
+       }
+      return intersectionList;
     }
 }
