@@ -29,14 +29,25 @@ public class MapDictionaryExercises {
      * Create a map from arrays of keys and values.
      * 
      * Example:
-     * createMap(["a", "b", "c"], [1, 2, 3]) → {"a": 1, "b": 2, "c": 3}
+     * createMap(["a"keys.length;
+       for (int i = 0; i < length; i++) {}, "b", "c"], [1, 2, 3]) → {"a": 1, "b": 2, "c": 3}
      * 
      * @param keys Array of keys
      * @param values Array of values
      * @return Map with paired keys and values
      */
     public Map<String, Integer> createMap(String[] keys, Integer[] values) {
-        throw new UnsupportedOperationException("Method not implemented yet");
+       Map<String, Integer> resultMap = new HashMap<>();
+
+       if(keys == null || values == null) {
+           return resultMap;
+       }
+
+       int length = Math.min(keys.length, values.length);
+       for (int i = 0; i < length; i++) {
+           resultMap.put(keys[i], values[i]);
+       }
+        return resultMap;
     }
 
     /**
