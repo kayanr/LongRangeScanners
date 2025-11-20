@@ -1,9 +1,6 @@
 package com.zipcode.exercises.task05;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Task 5: Maps and Dictionaries - Java
@@ -63,7 +60,15 @@ public class MapDictionaryExercises {
      * @return The value for the key, or default value
      */
     public Integer getValueOrDefault(Map<String, Integer> map, String key, Integer defaultValue) {
-        throw new UnsupportedOperationException("Method not implemented yet");
+        if(map == null) {
+            return defaultValue;
+        }
+
+        if(map.containsKey(key)) {
+            return map.get(key);
+        } else{
+            return defaultValue;
+        }
     }
 
     /**
