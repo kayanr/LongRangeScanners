@@ -81,7 +81,20 @@ public class MapDictionaryExercises {
      * @return Map of character frequencies
      */
     public Map<Character, Integer> countCharacterFrequency(String text) {
-        throw new UnsupportedOperationException("Method not implemented yet");
+        Map<Character, Integer> resultMap = new HashMap<>();
+
+        if(text == null) {
+            return resultMap;
+        }
+
+        for(char c : text.toCharArray()) {
+            if(resultMap.containsKey(c)) {
+                resultMap.put(c, resultMap.get(c) + 1);
+            } else {
+                resultMap.put(c, 1);
+            }
+        }
+        return resultMap;
     }
 
     /**
